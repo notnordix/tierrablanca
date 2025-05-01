@@ -27,7 +27,7 @@ export async function sendOrderEmail(orderData: OrderFormData) {
     })
 
     // Recipient email (where the order notifications will be sent)
-    const recipientEmail = process.env.RECIPIENT_EMAIL || "Contact@sofiandco.ma"
+    const recipientEmail = process.env.RECIPIENT_EMAIL || "noureddineelmhassani@gmail.com"
 
     // Format items for email
     const itemsList = orderData.items
@@ -45,7 +45,7 @@ export async function sendOrderEmail(orderData: OrderFormData) {
 
     // Email content
     const mailOptions = {
-      from: process.env.EMAIL_FROM || "orders@tierrablanca.ma",
+      from: process.env.EMAIL_FROM || "noureloko995@gmail.com",
       to: recipientEmail,
       replyTo: orderData.email,
       subject: `Nouvelle Commande de ${orderData.fullName}`,
