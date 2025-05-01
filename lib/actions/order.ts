@@ -26,15 +26,6 @@ export async function sendOrderEmail(orderData: OrderFormData) {
       },
     })
 
-    // Log the email configuration for debugging (remove in production)
-    console.log("Order email configuration:", {
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
-      secure: process.env.EMAIL_SECURE,
-      user: process.env.EMAIL_USER,
-      // Don't log the password for security reasons
-    })
-
     // Recipient email (where the order notifications will be sent)
     const recipientEmail = process.env.RECIPIENT_EMAIL || "Contact@sofiandco.ma"
 

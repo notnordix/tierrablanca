@@ -23,15 +23,6 @@ export async function sendContactEmail(formData: ContactFormData) {
       },
     })
 
-    // Log the email configuration for debugging (remove in production)
-    console.log("Email configuration:", {
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
-      secure: process.env.EMAIL_SECURE,
-      user: process.env.EMAIL_USER,
-      // Don't log the password for security reasons
-    })
-
     // Recipient email (where the contact form submissions will be sent)
     const recipientEmail = process.env.RECIPIENT_EMAIL || "noureddineelmhassani@gmail.com"
 
