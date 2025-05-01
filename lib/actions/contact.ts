@@ -30,12 +30,12 @@ export async function sendContactEmail(formData: ContactFormData) {
     const mailOptions = {
       from: process.env.EMAIL_FROM || "noureloko995@gmail.com",
       to: recipientEmail,
-      replyTo: formData.email,
+      replyTo: formData.email || undefined, // Use undefined if email is not provided
       subject: `Contact Form: ${formData.subject || "New Message from TierraBlanca Website"}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
+        <p><strong>Email:</strong> ${formData.email || "Not provided"}</p>
         <p><strong>Phone:</strong> ${formData.phone || "Not provided"}</p>
         <p><strong>Subject:</strong> ${formData.subject || "Not provided"}</p>
         <h3>Message:</h3>
@@ -45,7 +45,7 @@ export async function sendContactEmail(formData: ContactFormData) {
         New Contact Form Submission
         
         Name: ${formData.name}
-        Email: ${formData.email}
+        Email: ${formData.email || "Not provided"}
         Phone: ${formData.phone || "Not provided"}
         Subject: ${formData.subject || "Not provided"}
         
