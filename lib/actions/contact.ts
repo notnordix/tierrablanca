@@ -65,13 +65,6 @@ export async function sendContactEmail(formData: ContactFormData) {
       console.error("Error name:", error.name)
       console.error("Error message:", error.message)
       console.error("Error stack:", error.stack)
-      const smtpError = error as any // Cast to any to access SMTP-specific properties
-      if (smtpError.response) {
-        console.error("SMTP Response Error:", smtpError.response)
-      }
-      if (smtpError.code) {
-        console.error("SMTP Error Code:", smtpError.code)
-      }
     }
     return { success: false, message: "Failed to send message. Please try again later." }
   }
