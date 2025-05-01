@@ -201,7 +201,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
-                    Email <span className="text-red-500">*</span>
+                    Email
                   </label>
                   <input
                     type="email"
