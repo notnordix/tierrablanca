@@ -13,7 +13,7 @@ export default function ProductsPage() {
       <PageHero
         title="Nos Produits"
         subtitle="Fabriques a la main avec soin et tradition"
-        backgroundImage="https://i.ibb.co/zT9KRYjr/a36ba9c5-941e-4749-b5bc-28e57e20f26e.jpg"
+        backgroundImage="/hero.jpeg"
       />
 
       <section className="py-12 sm:py-16 md:py-20 bg-[#f9f7f4]">

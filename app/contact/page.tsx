@@ -11,7 +11,7 @@ export default function ContactPage() {
       <PageHero
         title="Contactez-Nous"
         subtitle="Nous serions ravis de vous entendre"
-        backgroundImage="https://i.ibb.co/zT9KRYjr/a36ba9c5-941e-4749-b5bc-28e57e20f26e.jpg"
+        backgroundImage="/hero.jpeg"
       />
       <Contact />
       <Footer />

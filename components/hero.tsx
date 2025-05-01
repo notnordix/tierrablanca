@@ -45,7 +45,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <Image
-          src="https://i.ibb.co/zT9KRYjr/a36ba9c5-941e-4749-b5bc-28e57e20f26e.jpg"
+          src="/hero.jpeg"
           alt="TierraBlanca articles exclusifs"
           className="object-cover"
           priority

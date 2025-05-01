@@ -70,7 +70,7 @@ export default function About() {
             className="relative h-[250px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden shadow-xl order-1 md:order-2"
           >
             <Image
-              src="https://i.ibb.co/9mRnPKrX/8e709afe-8724-4eed-868d-f6fcf7cffb01.jpg"
+              src="/about.jpeg"
               alt="Artisanat TierraBlanca"
               className="object-cover"
               fill
