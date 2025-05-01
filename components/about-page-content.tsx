@@ -67,7 +67,7 @@ export default function AboutPageContent() {
             className="relative h-[300px] sm:h-[400px] rounded-lg overflow-hidden shadow-xl order-first md:order-last"
           >
             <Image
-              src="https://i.ibb.co/9mRnPKrX/8e709afe-8724-4eed-868d-f6fcf7cffb01.jpg"
+              src="/about-bg.jpeg"
               alt="TierraBlanca artisan craftsmanship"
               className="object-cover"
               fill
