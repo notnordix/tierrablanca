@@ -41,6 +41,20 @@ export const products: Product[] = [
     ],
     inStock: true,
   },
+  {
+    id: 2,
+    name: "N A T U R A",
+    shortDescription: "Vases décoratifs en argile blanche",
+    fullDescription:
+      "Élégance et authenticité se retrouvent dans ces vases décoratifs en argile blanche, modelés à la main avec une attention particulière aux détails. Leur teinte claire et naturelle s'intègre harmonieusement à tous les styles d'intérieur, du plus épuré au plus contemporain. Des pièces uniques, façonnées avec passion, prêtes à donner du caractère et de la douceur à votre espace.",
+    price: "600 MAD",
+    materials: ["Argile blanche lisse"],
+    sizes: ["Standard"],
+    colors: ["White"],
+    mainImage: "/products/p2/1.jpeg",
+    images: ["/products/p2/1.jpeg", "/products/p2/2.jpeg", "/products/p2/3.jpeg", "/products/p2/4.jpeg"],
+    inStock: true,
+  },
 ]
 
 export function getProductById(id: number): Product | undefined {
