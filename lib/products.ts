@@ -55,6 +55,53 @@ export const products: Product[] = [
     images: ["/products/p2/1.jpeg", "/products/p2/2.jpeg", "/products/p2/3.jpeg", "/products/p2/4.jpeg"],
     inStock: true,
   },
+  {
+    id: 3,
+    name: "F L O R I A",
+    shortDescription: "Vases décoratifs en argile blanche",
+    fullDescription:
+      "Façonné dans une argile blanche douce et pure, ce vase moderne capte la lumière et apaise les espaces. Chaque pièce est unique, comme un souffle de calme posé dans votre intérieur.",
+    price: "240 MAD",
+    materials: ["Argile blanche lisse"],
+    sizes: ["Standard"],
+    colors: ["White"],
+    mainImage: "/products/p3/1.jpeg",
+    images: ["/products/p3/1.jpeg", "/products/p3/2.jpeg", "/products/p3/3.jpeg", "/products/p3/4.jpeg"],
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: "S E P I A",
+    shortDescription: "Vases décoratifs en argile blanche",
+    fullDescription:
+      "Chaleur de la terre, éclat de la couleur. Ce vase blanc en argile blanche, au design contemporain, est entièrement façonné à la main. Sa teinte lumineuse et sa silhouette minimaliste en font une pièce idéale pour sublimer un intérieur moderne, naturel ou épuré. Un objet décoratif unique, qui allie finesse artisanale et élégance intemporelle.",
+    price: "180 MAD",
+    materials: ["Argile blanche lisse"],
+    sizes: ["Standard"],
+    colors: ["White"],
+    mainImage: "/products/p4/1.jpeg",
+    images: ["/products/p4/1.jpeg", "/products/p4/2.jpeg", "/products/p4/3.jpeg", "/products/p4/4.jpeg"],
+    inStock: true,
+  },
+  {
+    id: 5,
+    name: "A Z U R A",
+    shortDescription: "Assiette en argile blanche",
+    fullDescription:
+      "Simplicité et raffinement s'unissent dans ces assiettes en argile blanche, entièrement façonnées à la main. Leur finition douce et naturelle sublime chaque plat, du plus quotidien au plus raffiné. Des pièces uniques qui apportent une touche artisanale et chaleureuse à votre table.",
+    price: "130 MAD", // Default to Moyen price
+    prices: {
+      Grand: "180 MAD",
+      Moyen: "130 MAD",
+      Petit: "100 MAD",
+    },
+    materials: ["Argile blanche lisse"],
+    sizes: ["Grand", "Moyen", "Petit"],
+    colors: ["White"],
+    mainImage: "/products/p5/1.jpeg",
+    images: ["/products/p5/1.jpeg", "/products/p5/2.jpeg", "/products/p5/3.jpeg", "/products/p5/4.jpeg"],
+    inStock: true,
+  },
 ]
 
 export function getProductById(id: number): Product | undefined {
