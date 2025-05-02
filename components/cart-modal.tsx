@@ -46,14 +46,12 @@ export default function CartModal() {
     const errors: Record<string, string> = {}
 
     if (!formData.fullName.trim()) errors.fullName = "Obligatoire"
-    if (!formData.email.trim()) {
-      errors.email = "Obligatoire"
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Email invalide"
-    }
     if (!formData.phone.trim()) errors.phone = "Obligatoire"
     if (!formData.city.trim()) errors.city = "Obligatoire"
     if (!formData.address.trim()) errors.address = "Obligatoire"
+    if (formData.email.trim() && !/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Email invalide"
+    }
 
     return errors
   }
@@ -158,7 +156,7 @@ export default function CartModal() {
           <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-white">
             <h2 className="text-lg font-serif font-semibold text-[#415e5a] flex items-center">
               <ShoppingBag size={18} className="mr-2" />
-              {isCheckingOut ? "Paiement" : `Votre Panier (${totalItems})`}
+              {isCheckingOut ? "Informations client" : `Votre Panier (${totalItems})`}
             </h2>
             <button
               onClick={closeCart}
@@ -203,7 +201,7 @@ export default function CartModal() {
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email *
+                        Email
                       </label>
                       <input
                         type="email"
@@ -419,7 +417,7 @@ export default function CartModal() {
                     onClick={handleCheckout}
                     className="flex-1 py-2.5 bg-[#415e5a] text-white rounded-md hover:bg-[#5a7d79] transition-colors font-medium"
                   >
-                    Passer à la Caisse
+                    Passer la Commande
                   </button>
 
                   <button

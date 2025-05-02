@@ -24,8 +24,7 @@ export default function ProductsPage() {
             </h2>
             <div className="w-16 sm:w-24 h-1 bg-[#415e5a] mx-auto mb-4"></div>
             <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">
-              Explorez notre gamme complète de céramiques marocaines artisanales, chaque pièce racontant une histoire de
-              tradition et d'artisanat.
+              Découvrez nos collections, où chaque pièce reflète l’héritage d’un savoir-faire ancestral et l’âme de la tradition.
             </p>
           </div>
 

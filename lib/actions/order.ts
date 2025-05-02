@@ -47,13 +47,13 @@ export async function sendOrderEmail(orderData: OrderFormData) {
     const mailOptions = {
       from: process.env.EMAIL_FROM || "noureloko995@gmail.com",
       to: recipientEmail,
-      replyTo: orderData.email,
+      replyTo: orderData.email || undefined,
       subject: `Nouvelle Commande de ${orderData.fullName}`,
       html: `
         <h2>Nouvelle Commande</h2>
         <h3>Informations Client:</h3>
         <p><strong>Nom:</strong> ${orderData.fullName}</p>
-        <p><strong>Email:</strong> ${orderData.email}</p>
+        <p><strong>Email:</strong> ${orderData.email || "Non fourni"}</p>
         <p><strong>Telephone:</strong> ${orderData.phone}</p>
         <p><strong>Ville:</strong> ${orderData.city}</p>
         <p><strong>Adresse:</strong> ${orderData.address.replace(/\n/g, "<br>")}</p>
@@ -85,7 +85,7 @@ export async function sendOrderEmail(orderData: OrderFormData) {
         
         Informations Client:
         Nom: ${orderData.fullName}
-        Email: ${orderData.email}
+        Email: ${orderData.email || "Non fourni"}
         Telephone: ${orderData.phone}
         Ville: ${orderData.city}
         Adresse: ${orderData.address}
