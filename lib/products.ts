@@ -52,7 +52,7 @@ export const products: Product[] = [
     sizes: ["Standard"],
     colors: ["White"],
     mainImage: "/products/p2/1.jpeg",
-    images: ["/products/p2/1.jpeg", "/products/p2/2.jpeg", "/products/p2/3.jpeg", "/products/p2/4.jpeg"],
+    images: ["/products/p2/1.jpeg", "/products/p2/2.jpeg", "/products/p2/3.jpeg", "/products/p2/4.jpeg","/products/p2/5.jpeg"],
     inStock: true,
   },
   {
@@ -66,7 +66,7 @@ export const products: Product[] = [
     sizes: ["Standard"],
     colors: ["White"],
     mainImage: "/products/p3/1.jpeg",
-    images: ["/products/p3/1.jpeg", "/products/p3/2.jpeg", "/products/p3/3.jpeg", "/products/p3/4.jpeg"],
+    images: ["/products/p3/1.jpeg", "/products/p3/2.jpeg", "/products/p3/3.jpeg"],
     inStock: true,
   },
   {
@@ -80,7 +80,7 @@ export const products: Product[] = [
     sizes: ["Standard"],
     colors: ["White"],
     mainImage: "/products/p4/1.jpeg",
-    images: ["/products/p4/1.jpeg", "/products/p4/2.jpeg", "/products/p4/3.jpeg", "/products/p4/4.jpeg"],
+    images: ["/products/p4/1.jpeg", "/products/p4/2.jpeg", "/products/p4/3.jpeg", "/products/p4/4.jpeg", "/products/p4/5.jpeg"],
     inStock: true,
   },
   {
@@ -99,7 +99,26 @@ export const products: Product[] = [
     sizes: ["Grand", "Moyen", "Petit"],
     colors: ["White"],
     mainImage: "/products/p5/1.jpeg",
-    images: ["/products/p5/1.jpeg", "/products/p5/2.jpeg", "/products/p5/3.jpeg", "/products/p5/4.jpeg"],
+    images: ["/products/p5/1.jpeg", "/products/p5/2.jpeg", "/products/p5/3.jpeg", "/products/p5/4.jpeg", "/products/p5/5.jpeg"],
+    inStock: true,
+  },
+  {
+    id: 6,
+    name: "N E O R A",
+    shortDescription: "Saladier en argile blanche",
+    fullDescription:
+      "Sobriété et authenticité s'invitent à votre table avec ce saladier en argile blanche, façonné à la main avec soin. Sa texture douce et sa teinte naturelle mettent en valeur vos préparations tout en apportant une touche artisanale à votre décoration. Une pièce unique, entre fonctionnalité et esthétisme.",
+    price: "130 MAD", // Default to Moyen price
+    prices: {
+      Grand: "180 MAD",
+      Moyen: "130 MAD",
+      Petit: "100 MAD",
+    },
+    materials: ["Argile blanche lisse"],
+    sizes: ["Grand", "Moyen", "Petit"],
+    colors: ["White"],
+    mainImage: "/products/p6/1.jpeg",
+    images: ["/products/p6/1.jpeg", "/products/p6/2.jpeg", "/products/p6/3.jpeg", "/products/p6/4.jpeg"],
     inStock: true,
   },
 ]
