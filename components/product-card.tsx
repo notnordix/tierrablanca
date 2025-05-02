@@ -40,7 +40,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col"
       >
         {/* Image container with fixed aspect ratio */}
-        <div className="relative h-36 sm:h-48 md:h-56 lg:h-64 overflow-hidden">
+        <div className="relative h-36 sm:h-48 md:h-56 lg:h-80 overflow-hidden">
           <Image
             src={product.mainImage || "/placeholder.svg"}
             alt={product.name}
