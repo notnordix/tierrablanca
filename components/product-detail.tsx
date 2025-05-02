@@ -18,6 +18,16 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   const [selectedSize, setSelectedSize] = useState(product.sizes[0] || "")
   const [selectedColor, setSelectedColor] = useState(product.colors[0] || "")
   const [isAddedToCart, setIsAddedToCart] = useState(false)
+  const [currentPrice, setCurrentPrice] = useState(product.price)
+
+  // Update price when size changes
+  useEffect(() => {
+    if (product.prices && selectedSize && product.prices[selectedSize]) {
+      setCurrentPrice(product.prices[selectedSize])
+    } else {
+      setCurrentPrice(product.price)
+    }
+  }, [selectedSize, product.prices, product.price])
 
   // For image gallery navigation
   const nextImage = () => {
@@ -57,7 +67,13 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   }
 
   const handleAddToCart = () => {
-    addItem(product, quantity, selectedSize, selectedColor)
+    // Create a modified product with the current price
+    const productToAdd = {
+      ...product,
+      price: currentPrice, // Use the current price based on selected size
+    }
+
+    addItem(productToAdd, quantity, selectedSize, selectedColor)
     setIsAddedToCart(true)
 
     // Reset the "Added to Cart" message after 3 seconds
@@ -72,7 +88,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
     // Create a message with product details
     let message = `Bonjour TierraBlanca, je suis intéressé(e) par ce produit:\n\n`
     message += `*${product.name}*\n`
-    message += `Prix: ${product.price}\n`
+    message += `Prix: ${currentPrice}\n` // Use current price based on selected size
 
     // Add selected options if any
     if (selectedSize) {
@@ -95,7 +111,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         {/* Left Column - Product Images */}
         <div className="space-y-4">
           {/* Main Image Container */}
-          <div className="relative aspect-square overflow-hidden rounded-xl border border-gray-100 bg-gray-50 shadow-sm">
+          <div className="relative aspect-square overflow-hidden rounded-xl border border-gray-100 bg-gray-50 shadow-sm md:max-w-[90%] lg:max-w-[80%] mx-auto">
             {/* Navigation Arrows */}
             <button
               onClick={prevImage}
@@ -127,7 +143,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                   src={product.images[selectedImage] || "/placeholder.svg"}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  className="object-cover object-bottom"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
@@ -158,7 +174,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                   src={image || "/placeholder.svg"}
                   alt={`${product.name} - Vue ${index + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-cover object-bottom"
                   sizes="(max-width: 768px) 25vw, 10vw"
                 />
               </motion.button>
@@ -175,7 +191,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               <div className="flex items-center justify-between mb-2">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#415e5a]">{product.name}</h1>
                 <p className="text-xl sm:text-2xl font-medium text-[#415e5a] whitespace-nowrap ml-4">
-                  {product.price.replace("€", "MAD")}
+                  {currentPrice.replace("€", "MAD")}
                 </p>
               </div>
               <p className="text-gray-600 text-base mb-3">{product.shortDescription}</p>
@@ -231,6 +247,9 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                     disabled={!product.inStock}
                   >
                     {size}
+                    {product.prices && product.prices[size] && (
+                      <span className="ml-1 text-xs">({product.prices[size]})</span>
+                    )}
                   </button>
                 ))}
               </div>

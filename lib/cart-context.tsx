@@ -94,7 +94,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
           {
             id: product.id,
             name: product.name,
-            price: product.price,
+            price: product.price, // This will now be the price based on the selected size
             image: product.mainImage,
             quantity,
             size,

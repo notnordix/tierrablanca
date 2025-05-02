@@ -13,6 +13,25 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
+  // Get the default price (prioritize Medium size if available)
+  const getDefaultPrice = () => {
+    if (product.prices) {
+      // First try to get the Moyen size price
+      if (product.prices["Moyen"]) {
+        return product.prices["Moyen"]
+      }
+      // If no Medium size, get the first available size price
+      const firstSizePrice = Object.values(product.prices)[0]
+      if (firstSizePrice) {
+        return firstSizePrice
+      }
+    }
+    // Fall back to the default price
+    return product.price
+  }
+
+  const displayPrice = getDefaultPrice()
+
   return (
     <Link href={`/products/${product.id}`}>
       <motion.div
@@ -25,7 +44,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <Image
             src={product.mainImage || "/placeholder.svg"}
             alt={product.name}
-            className="transition-transform duration-700 ease-in-out group-hover:scale-110 object-cover"
+            className="transition-transform duration-700 ease-in-out group-hover:scale-110 object-cover object-bottom"
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
           />
@@ -51,7 +70,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           {/* Price with improved styling */}
           <div className="mt-auto flex items-center justify-between">
-            <p className="text-xs sm:text-sm text-[#415e5a] font-semibold">{product.price.replace("€", "MAD")}</p>
+            <p className="text-xs sm:text-sm text-[#415e5a] font-semibold">{displayPrice.replace("€", "MAD")}</p>
 
             {/* Stock indicator - smaller on mobile */}
             {product.inStock ? (
