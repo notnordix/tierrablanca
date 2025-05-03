@@ -6,6 +6,7 @@ import Loader from "@/components/loader"
 import { CartProvider } from "@/lib/cart-context"
 import CartModal from "@/components/cart-modal"
 import { Analytics } from "@vercel/analytics/react"
+import Head from "next/head"
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -55,14 +56,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <head>
+      <Head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2Y1L1GL98"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-N2Y1L1GL98');
+            `,
+          }}
+        />
         <style
           dangerouslySetInnerHTML={{
             __html: `@import url('https://fonts.cdnfonts.com/css/optima');`,
           }}
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
+      </Head>
       <body className={`${workSans.variable} font-sans`}>
         <CartProvider>
           <Loader />
