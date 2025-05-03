@@ -5,6 +5,7 @@ import { Work_Sans } from "next/font/google"
 import Loader from "@/components/loader"
 import { CartProvider } from "@/lib/cart-context"
 import CartModal from "@/components/cart-modal"
+import { Analytics } from "@vercel/analytics/react"
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({
           {children}
           <CartModal />
         </CartProvider>
+        <Analytics />
       </body>
     </html>
   )
